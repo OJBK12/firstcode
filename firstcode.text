@@ -1,5 +1,13 @@
+git study：
 工作区》》暂存区》》本地库》》远程库
+步骤:
 1.进入文件，git init 初始化为本地仓库
 2.添加文件git add添加进工作区git commit -m "注释" 添加进本地库
 3.提交到本地库的文件数据若有修改，则需重新add，commit
-4.git status  查看当前状态
+
+日志展示:
+ 1.git status  查看当前状态
+   git status 显示记录过多时，将分页显示内容，左下角显示: 空格显示下一页，b显示上一页，尾页显示end,退出q
+ 2.git log --pretty=oneline
+ 3.git log --oneline
+ 4.git reflog   
