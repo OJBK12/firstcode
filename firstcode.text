@@ -18,3 +18,4 @@ git study：
  2.git reset --mixed 本地库指针移动时，重置暂存区，工作区不变
  3.git reset --soft 本地库指针移动时，工作区，暂存区都不变
 4
+5
