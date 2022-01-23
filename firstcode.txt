@@ -25,3 +25,13 @@ git study：
 工作区与暂存区多个文件比对:git diff
 缓存区与本地库文件比较:git diff 历史版本 文件名
 
+分支:版本控制过程中，使用多条线程（多个分子）推进多个任务，
+     分支好处:同时多个分支可以并发开发，互不影响，提高效率
+     操作分支:git branch -v :显示当前所处分支
+              git branch branch01 :创建branch01分支
+	      git checkout branch01 :切换至branch01分支上
+	      git checkout master :切换到主分支(master)
+              git marg branck01: 合并分支(先切换到master分支) 
+     分支发生冲突:（当master分支与branch01相同位置数据发生修改时）	      
+            解决冲突:(经商议后删除废弃数据，保留共同认定的，再add,commit （注:commit时不可加文件名）)
+
