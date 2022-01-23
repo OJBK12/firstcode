@@ -31,7 +31,7 @@ git study：
               git branch branch01 :创建branch01分支
 	      git checkout branch01 :切换至branch01分支上
 	      git checkout master :切换到主分支(master)
-              git marg branck01: 合并分支(先切换到master分支) 
+              git marge branck01: 合并分支(先切换到master分支) 
      分支发生冲突:（当master分支与branch01相同位置数据发生修改时）	      
             解决冲突:(经商议后删除废弃数据，保留共同认定的，再add,commit （注:commit时不可加文件名）)
 
