@@ -30,6 +30,10 @@ public class GitTest01 {
     public void study(){
         System.out.println("i love study");
     }
+    public static int sleep(){
+        return 1000;
+    }
+
     @Override
     public String toString() {
         return "GitTest01{" +
