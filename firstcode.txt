@@ -47,7 +47,17 @@ gitHup：
 先，拉取:git fetch 远程库别名  远程库master    只是将远程库内容下载到本地库，工作区没有展示
  (可 切换至远程master查看数据 git checkout 远程库别名/master)
 再，合并:git merge  远程库master                      
+
        
-协同开发冲突解决:
+跨公司协同开发冲突解决:
 情景:A push到gitHup,B pull 到本地并进行修改再push，A对本地文件进行修改再push，AB修改数据位置一样，将报错
-解决：A将文件pull本地，认为修改，再push到gitHup
+解决：A将文件pull本地，再次修改，再push到gitHup
+跨公司协同开发:A将库地址发给B，B登录账号后登录该库地址，点击fork复制一份远程库，再进行clone将远程库代码克隆到本地,
+修改代码后再次push到远程库，接着进行pull request到A，A进行审核后merge即可。
+
+SSH免密登录:避免每次登录进行身份验证(实际开发中使用)
+1.进入用户主目录 ：cd ~
+2.执行命令，生成ssh目录：ssh-keygen-t rsa -C gitHUP注册邮箱
+3.3次回车
+4.打开id_rad.pub文件，复制里面代码到gitHUP》setting》SSH andGPG keys》key  （并自定义title）
+5.使用ssh地址登录，先定义别名，接着免密push使用
