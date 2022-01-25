@@ -59,5 +59,13 @@ SSH免密登录:避免每次登录进行身份验证(实际开发中使用)
 1.进入用户主目录 ：cd ~
 2.执行命令，生成ssh目录： ssh-keygen -t rsa -C 2188686434qq.com(gitHup注册邮箱)
 3.3次回车
-4.打开id_rad.pub文件，复制里面代码到gitHUP》setting》SSH andGPG keys》key  （并自定义title）
+4.打开id_rad.pub文件，复制里面代码到gitHUP》头像setting》SSH andGPG keys》key  （并自定义title）
 5.使用ssh地址登录，先定义别名，接着免密push使用
+
+idea拉取和推送资源:
+先pull再push ,将idea中代码push到与之不相关的远程库中，先在git中使用(git pull 别名 master --allow-unrelated-histories)允许不相关历史合并 
+然后进行（git push -u 别名 master-f）
+idea 克隆远程仓库:fiel >new >project from versin control>远程库地址
+idea 防止冲突:避免在一个文件改代码，修改文件前，先pull到本地库再push
+         
+
