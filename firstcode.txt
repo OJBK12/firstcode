@@ -48,3 +48,6 @@ gitHup：
  (可 切换至远程master查看数据 git checkout 远程库别名/master)
 再，合并:git merge  远程库master                      
        
+协同开发冲突解决:
+情景:A push到gitHup,B pull 到本地并进行修改再push，A对本地文件进行修改再push，AB修改数据位置一样，将报错
+解决：A将文件pull本地，认为修改，再push到gitHup
