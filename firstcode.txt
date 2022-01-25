@@ -1,0 +1,71 @@
+git study：
+工作区》add 》暂存区》commit》本地库》》远程库
+步骤:
+1.进入文件，git init 初始化为本地仓库
+2.添加文件git add添加进工作区git commit -m "注释" 添加进本地库
+3.提交到本地库的文件数据若有修改，则需重新add，commit
+
+日志展示:
+ 1.git status  查看当前状态
+   git status 显示记录过多时，将分页显示内容，左下角显示: 空格显示下一页，b显示上一页，尾页显示end,退出q
+ 2.git log --pretty=oneline
+ 3.git log --oneline
+ 4.git reflog  
+
+ 回退(恢复)数据版本:
+ 1.(使用最多)git reset --hard '回退索引'  (选中文本即可复制)
+ 本地库的指针移动的同时，暂存区，工作区也将重置
+ 2.git reset --mixed 本地库指针移动时，重置暂存区，工作区不变
+ 3.git reset --soft 本地库指针移动时，工作区，暂存区都不变
+文件删除及恢复:
+1.删除firstcode.text文件（删除工作区文件），再通过add和commit 及删除缓存区和本地库的文件
+2.可通过git reset --hard '索引' 恢复文件,当通过add删除缓存区的数据时，也可以使用此方法恢复
+
+工作区文件对比暂存区单文件:git diff 文件名
+工作区与暂存区多个文件比对:git diff
+缓存区与本地库文件比较:git diff 历史版本 文件名
+
+分支:版本控制过程中，使用多条线程（多个分子）推进多个任务，
+     分支好处:同时多个分支可以并发开发，互不影响，提高效率
+     操作分支:git branch -v :显示当前所处分支
+              git branch branch01 :创建branch01分支
+	      git checkout branch01 :切换至branch01分支上
+	      git checkout master :切换到主分支(master)
+              git marge branck01: 合并分支(先切换到master分支) 
+     分支发生冲突:（当master分支与branch01相同位置数据发生修改时）	      
+            解决冲突:(经商议后删除废弃数据，保留共同认定的，再add,commit （注:commit时不可加文件名）)
+
+gitHup： 
+本地创建远程创库别名：git remote add 别名 远程库地址
+查看别名:  git remote -v
+推送本地库文件到gitHUP:  git push 别名 master
+将GitHub远程库文件克隆到本地库: git clone 远程库地址   (首先选定一个本地文件)
+克隆操作作用: 初始化本地库，将远程库内容完整的克隆到本地，替我们创建远程库别名同一个团队才可进行push,clone
+ 
+拉取操作: git pull 远程库别名 master (简单代码，安全性低)
+  
+先，拉取:git fetch 远程库别名  远程库master    只是将远程库内容下载到本地库，工作区没有展示
+ (可 切换至远程master查看数据 git checkout 远程库别名/master)
+再，合并:git merge  远程库master                      
+
+       
+跨公司协同开发冲突解决:
+情景:A push到gitHup,B pull 到本地并进行修改再push，A对本地文件进行修改再push，AB修改数据位置一样，将报错
+解决：A将文件pull本地，再次修改，再push到gitHup
+跨公司协同开发:A将库地址发给B，B登录账号后登录该库地址，点击fork复制一份远程库，再进行clone将远程库代码克隆到本地,
+修改代码后再次push到远程库，接着进行pull request到A，A进行审核后merge即可。
+
+SSH免密登录:避免每次登录进行身份验证(实际开发中使用)
+1.进入用户主目录 ：cd ~
+2.执行命令，生成ssh目录： ssh-keygen -t rsa -C 2188686434qq.com(gitHup注册邮箱)
+3.3次回车
+4.打开id_rad.pub文件，复制里面代码到gitHUP》头像setting》SSH andGPG keys》key  （并自定义title）
+5.使用ssh地址登录，先定义别名，接着免密push使用
+
+idea拉取和推送资源:
+先pull再push ,将idea中代码push到与之不相关的远程库中，先在git中使用(git pull 别名 master --allow-unrelated-histories)允许不相关历史合并 
+然后进行（git push -u 别名 master-f）
+idea 克隆远程仓库:fiel >new >project from versin control>远程库地址
+idea 防止冲突:避免在一个文件改代码，修改文件前，先pull到本地库再push
+         
+
