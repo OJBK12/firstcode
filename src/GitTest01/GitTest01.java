@@ -43,7 +43,7 @@ public class GitTest01 {
 
      public static void main(String[] args) {
          GitTest01 gitTest01 = new GitTest01("张三",12);
-         System.out.println(gitTest01.getAge() + gitTest01.getName());
+         System.out.println(gitTest01.getAge() +"/t"+ gitTest01.getName());
          gitTest01.study();
      }
  }
