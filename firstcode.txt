@@ -35,3 +35,11 @@ git study：
      分支发生冲突:（当master分支与branch01相同位置数据发生修改时）	      
             解决冲突:(经商议后删除废弃数据，保留共同认定的，再add,commit （注:commit时不可加文件名）)
 
+gitHup： 
+本地创建远程创库别名：git remote add 别名 远程库地址
+查看别名:  git remote -v
+推送本地库文件到gitHUP:  git push 别名 master
+将GitHub远程库文件克隆到本地库: git clone 远程库地址   (首先选定一个本地文件)
+克隆操作作用: 初始化本地库，将远程库内容完整的克隆到本地，替我们创建远程库别名同一个团队才可进行push,clone
+                              
+       
