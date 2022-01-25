@@ -41,5 +41,10 @@ gitHup：
 推送本地库文件到gitHUP:  git push 别名 master
 将GitHub远程库文件克隆到本地库: git clone 远程库地址   (首先选定一个本地文件)
 克隆操作作用: 初始化本地库，将远程库内容完整的克隆到本地，替我们创建远程库别名同一个团队才可进行push,clone
-                              
+ 
+拉取操作: git pull 远程库别名 master (简单代码，安全性低)
+  
+先，拉取:git fetch 远程库别名  远程库master    只是将远程库内容下载到本地库，工作区没有展示
+ (可 切换至远程master查看数据 git checkout 远程库别名/master)
+再，合并:git merge  远程库master                      
        
